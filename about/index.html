@@ -4,6 +4,7 @@
         <title>1387网</title>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests;">
         <link href="favicon.ico" rel="icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.3/css/bulma.min.css">
         <style>
             .backgroundiv {
               background-color: #3498db;
@@ -37,7 +38,7 @@
         <hr>
         <div class = "backgroundiv">
             <h1>这里是 1387网</h1>
-            <strong class = 'dename'>User Name Loading......</strong>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/login";' id = 'blogin'>登录</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/lange";' id = blange>注册</button>&ensp;&ensp;&ensp;<button onclick = 'dete();' id = 'tolo'>退登</button>&ensp;&ensp;&ensp;&ensp;&ensp;|&ensp;&ensp;&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb";'>团队主页</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/young";'>young社的事</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/1387";'>1387的事</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/cal";'>公告</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/lbp";'>犇犇</button>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;相关链接&ensp;|&ensp;<button onclick = 'window.open("https://www.luogu.com.cn/team/74385")'>1387洛谷社（young）</button>&ensp;&ensp;&ensp;<button onclick = 'window.open("https://www.40code.com/#page=studio&id=535")'>1387 40code社</button>&ensp;&ensp;&ensp;<button onclick = 'window.open("https://www.ccw.site/topic/1387%E7%A4%BECCW%E5%88%86%E7%A4%BE")'>1387共创世界社</button>&ensp;
+            <strong class = 'dename'>加载用户名中......</strong>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/login";' id = 'blogin'>登录</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/lange";' id = blange>注册</button>&ensp;&ensp;&ensp;<button onclick = 'dete();' id = 'tolo'>退登</button>&ensp;&ensp;&ensp;&ensp;&ensp;|&ensp;&ensp;&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb";'>团队主页</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/young";'>young社的事</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/1387";'>1387的事</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/cal";'>公告</button>&ensp;&ensp;&ensp;<button onclick = 'window.location.href = "https://name317.github.io/1387teamweb/lbp";'>犇犇</button>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;相关链接&ensp;|&ensp;<button onclick = 'window.open("https://www.luogu.com.cn/team/74385")'>1387洛谷社（young）</button>&ensp;&ensp;&ensp;<button onclick = 'window.open("https://www.40code.com/#page=studio&id=535")'>1387 40code社</button>&ensp;&ensp;&ensp;<button onclick = 'window.open("https://www.ccw.site/topic/1387%E7%A4%BECCW%E5%88%86%E7%A4%BE")'>1387共创世界社</button>&ensp;
             <hr>
         </div>
         <br>
@@ -46,23 +47,23 @@
             <hr>
             <h2>感谢名单</h2>
             <div class = 'norcal'>
-		<table border="1">
-		<tr>
+		<table border="1" class="table">
+		<tr table is-hoverable>
 			<th width="120px">名称</th>
         		<th width="150px">帮助</th>
 			<th width="580px">额外属性</th>
 		</tr>
-    		<tr align = "center">
+    		<tr table is-hoverable align = "center">
         		<td>YXY317Coder</td>
         		<td>编写代码</td>
 			<td>是站长，网站ID在10之内的一个人</td>
     		</tr>
-		<tr align = "center">
+		<tr table is-hoverable align = "center">
         		<td>无名氏</td>
         		<td>测试网页，参与代码更新，投稿过作品</td>
 			<td>提供过建议，网站ID为10</td>
     		</tr>
-		<tr align = "center">
+		<tr table is-hoverable align = "center">
         		<td>Lg2307</td>
         		<td>测试网页</td>
 			<td>提供过建议，是网站ID在10之内的一个人</td>
@@ -72,19 +73,17 @@
         		<td>测试网页</td>
 			<td>网站ID在10之内的一个人</td>
     		</tr>
-		<tr align = "center">
+		<tr table is-hoverable align = "center">
 			<td>TimADE</td>
         		<td>测试网页</td>
 			<td>网站ID在10之内的一个人</td>
     		</tr>
-		<tr align = "center">
+		<tr table is-hoverable align = "center">
 			<td>MVP小刘刘</td>
         		<td>测试网页</td>
 			<td>网站ID在10之内的一个人</td>
     		</tr>
 		</table>
-            </div>
-        </div>
         <script>
             document.getElementById('blogin').disabled = true;
             document.getElementById('blange').disabled = true;
