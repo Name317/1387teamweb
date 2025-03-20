@@ -1,3 +1,4 @@
+
 document.getElementById('blogin').disabled = true;
 document.getElementById('blange').disabled = true;
 document.getElementById('tolo').disabled = true;
@@ -48,45 +49,6 @@ function pt(o,...args){
 	    return(xhr.statusText);
 	}
 };
-function app(nero){
-	var parentDiv = document.getElementById('motu');
-	var newDiv = document.createElement('div');
-	newDiv.className = 'divdiv';
-	newDiv.innerHTML = nero;
-	parentDiv.appendChild(newDiv);
-}
-function dob(){
-	var cnd0 = JSON.parse(pt('get','speak_counter'));
-	var cnd = cnd0['speak_counter'];
-	if (cnd == 'null'){
-		pt('update','speak_counter','0');
-		cnd = 0;
-	}
-	var up0 = JSON.parse(pt('get','speak_upel'));
-	var up = up0['speak_upel'];
-	if (up == 'null'){
-		pt('update','speak_upel','0');
-		up = 0;
-	}
-	console.log(up0);
-	console.log(up);
-	console.log(cnd0);
-	console.log(cnd);
-	for (var i = up;i >= up - cnd + 1;i--){
-		var dd0 = JSON.parse(pt('get','speak_user_' + String(i)));
-		var dd = dd0['speak_user_' + String(i)];
-		var d0 = JSON.parse(pt('get','speak_thing_' + String(i)));
-		var d = d0['speak_thing_' + String(i)];
-		var repo = d.split(" ");
-		for (var j = 0;j < repo.length;j++){
-			if (repo[j][0] === '@'){
-				repo[j] = '<a href = "https://name317.github.io/1387teamweb/users/?username=' + repo[j].substring(1,repo[j].length)  + '">' + repo[j] + '</a>';
-			}
-		}
-		app('<a href = "https://name317.github.io/1387teamweb/users/?username=' + dd + '">' + dd + '</a> : ' + repo.join(' '));
-		console.log(dd + ' : ' + d);
-	}
-}
 function simple(){
 	if (window.localStorage.getItem('nowname') !== '未登录' && window.localStorage.getItem('nowname') !== 'null'){
 		var dv = document.getElementById('cinn').value;
@@ -132,4 +94,58 @@ if (window.localStorage.getItem('nowname') !== '未登录' && window.localStorag
 else{
 	document.getElementById('cinn').placeholder = '请先登录再发犇犇！';
 }
+
+
+        function app(nero){
+	var parentDiv = document.getElementById('temp');
+	var newDiv = document.createElement('div');
+	newDiv.className = 'divdiv';
+	newDiv.innerHTML = nero;
+	parentDiv.appendChild(newDiv);
+}
+function dob(){
+    var a;
+	if(localStorage.teamweb){
+        document.getElementById('motu').innerHTML = localStorage.teamweb;
+a=1;
+// return;
+}	// localStorage.teamweb = document.getElementById('temp').innerHTML;
+	// document.getElementById('motu').innerHTML = localStorage.teamweb;
+}
+function Update(){
+var cnd0 = JSON.parse(pt('get','speak_counter'));
+	var cnd = cnd0['speak_counter'];
+	if (cnd == 'null'){
+		pt('update','speak_counter','0');
+		cnd = 0;
+	}
+	var up0 = JSON.parse(pt('get','speak_upel'));
+	var up = up0['speak_upel'];
+	if (up == 'null'){
+		pt('update','speak_upel','0');
+		up = 0;
+	}
+	for (var i = up;i >= up - cnd + 1;i--){
+		var dd0 = JSON.parse(pt('get','speak_user_' + String(i)));
+		var dd = dd0['speak_user_' + String(i)];
+		var d0 = JSON.parse(pt('get','speak_thing_' + String(i)));
+		var d = d0['speak_thing_' + String(i)];
+		var repo = d.split(" ");
+		for (var j = 0;j < repo.length;j++){
+			if (repo[j][0] === '@'){
+				repo[j] = '<a href = "https://name317.github.io/1387teamweb/users/?username=' + repo[j].substring(1,repo[j].length)  + '">' + repo[j] + '</a>';
+			}
+		}
+		app('<a href = "https://name317.github.io/1387teamweb/users/?username=' + dd + '">' + dd + '</a> : ' + repo.join(' '));
+		console.log(dd + ' : ' + d);
+	}
+localStorage.teamweb = document.getElementById('temp').innerHTML;
+
+	document.getElementById('motu').innerHTML = localStorage.teamweb;
+}
 dob();
+let updateInterval = setInterval(() => Update(), 500);
+
+window.addEventListener('beforeunload', () => {
+	clearInterval(updateInterval);
+});
