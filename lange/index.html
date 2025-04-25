@@ -54,7 +54,10 @@
             <input id = 'name' placeholder = '昵称'></input>
             <br>
             <br>
-            <input id = 'pass' placeholder = '密码'></input>
+            <input type="password" id = 'pass' placeholder = '密码'></input>
+            <br>
+            <br>
+	    <input type="password" id = 'pass2' placeholder = '再次输入密码'></input>
             <br>
             <br>
             <button onclick = 'bus();'>注册</button>&ensp;&ensp;&ensp;<a href = 'https://name317.github.io/1387teamweb/lange'>已有账号？去登录</a>
@@ -105,10 +108,15 @@
             function bus(){
                 var nad = document.getElementById("name").value;
                 var dod = document.getElementById("pass").value;
+		var dod2 = document.getElementById("pass2").value;
                 var d = JSON.parse(pt('get',nad + '_password'));
                 var d0 = d[nad + '_password'];
 				var dodot = JSON.parse(pt('get','counter'));
 				var dodet = Number(dodo['counter']) + 1;
+		    if (dod !== dod2){
+			    alert("两次输入的密码不一致！");
+		    }
+		    else{
 				if (d2 === 'null' || nad === '未登录'){
 					alert('有这个号了！');
 				}
@@ -130,6 +138,7 @@
                     }
 				}
                 window.location.href = 'https://name317.github.io/1387teamweb';
+		    }
             }
         </script>
     </body>
